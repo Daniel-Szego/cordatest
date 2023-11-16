@@ -1,0 +1,75 @@
+Chrome:
+sudo apt-get install libxss1 libappindicator1 libindicator7
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome*.deb
+
+Curl:
+sudo apt update
+sudo apt install curl
+curl --version
+
+Git: 
+sudo apt update
+sudo apt install git
+git --version
+
+Docker:
+sudo apt-get update
+sudo apt install docker.io
+sudo snap install docker
+ docker --version
+sudo docker run hello-world
+https://docs.docker.com/engine/install/ubuntu/
+
+
+Java Azul JDK
+sudo apt install gnupg ca-certificates curl
+
+curl -s https://repos.azul.com/azul-repo.key | sudo gpg --dearmor -o /usr/share/keyrings/azul.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/azul.gpg] https://repos.azul.com/zulu/deb stable main" | sudo tee /etc/apt/sources.list.d/zulu.list
+
+sudo apt update
+
+sudo apt install zulu<jdk-version>-jdk
+
+sudo apt install zulu17-jdk
+java -version
+
+Change java version: 
+update-java-alternatives --list
+sudo update-java-alternatives --set /usr/lib/jvm/zulu17-ca-amd64
+
+
+IntelliJ
+sudo apt update
+sudo apt install vim apt-transport-https curl wget software-properties-common
+sudo add-apt-repository ppa:mmk2410/intellij-idea -y
+sudo apt install intellij-idea-community -y
+
+Corda CLI: 
+https://docs.r3.com/en/platform/corda/5.0/developing-applications/tooling/installing-corda-cli.html
+
+Download platform-jars from https://developer.r3.com/next-gen-corda/#get-corda 
+Get corda-cli-installer-5.0.0.0.zip
+unzip ./corda-cli-installer-5.0.0.0.zip -d corda-cli-installer-5.0.0.0
+cd corda-cli-installer-5.0.0.0
+./install.sh
+export PATH="/home/dsz/.corda/cli:$PATH"
+echo $PATH
+./corda-cli.sh -h
+
+
+CSDE:
+git clone https://github.com/corda/CSDE-cordapp-template-java.git <local-folder>
+git checkout release/corda-5-0
+
+
+
+Checking connectivity after start:
+https://localhost:8888/api/v1/swagger#/
+
+API auth: 
+Username: admin
+Password: admin
+
